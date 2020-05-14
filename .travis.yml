@@ -1,31 +1,24 @@
 language:
-  - python
+- python
 os:
-  - linux
-
+- linux
 python:
-  - "3.6"
-  - "3.5"
-
+- '3.6'
 install:
-  - pip install --upgrade pip
-  - pip install setuptools
-  - pip install --upgrade setuptools
-  - pip install coveralls
-  - pip install -e .
-  - pip list
-
+- pip install --upgrade pip
+- pip install setuptools
+- pip install --upgrade setuptools
+- pip install coveralls
+- pip install -e .
+- pip list
 script:
-  - python setup.py test
-  - coverage run --source="crc/crc.py" setup.py test
-
+- python setup.py test
+- coverage run --source="crc/crc.py" setup.py test
 after_success: coveralls
-
 deploy:
   provider: pypi
-  user: nicoretti
+  user: "__token__"
   password:
-    secure: "YDHPqen5YNYHajfiDARogRQ1wgI1wgf+woXkX3CmOI8/XzIH0RykONlQ5fkntyZ3lgNlxPPg5UKy1xQvF/FFKrRY+8LnVXavpdZBuo3DlYpHNg3SchrVXB8teC1fyUDQcsKSXC/MTN4TlTwpjeKl6f7iIm/3qNslmGFqCLL1XKJial9U0tr1dhcmVEn+vukQP/aJY39n5KCPn3GpUiWY45S3g7kwE3+S6lmdHwLW0zcFIvLja08562jWxC118EhQuWuUdCBYGLTZkqq28R2BfX26fW4nqE5poEGYnvtlFiYRV1MtnnO+8dvT1vQ1n2qbfniaARH1Xi1U350t6nQcZZ0xAk8tyN9bhu4STvDng3ZLiZFlO0CzNtZhSMeElzNkZL5wkGSQEMgB24AgIW93E4M9jYoAhbXtsebt+SyJDxo5eTYB6HjcF+yulKmeHpkrN5MNKLyOeJeSEBtID+WICRedrkMmH+Nq4IAqi0dcER9llKHb29EL6ZE9EgA7jgFG2DFgvyMTnk85ryACfKciQ55bpKGrp7+9MEjM+J7XHtQyOpTBEFkeYVpxka+CRZVsmnD2WdLjawRQ9/DWoR4jglDPqDWNw8OE7PUTG63nC2OYrUJEb7KDdKoLIBxGCWKP4bZhlaDjNicTln04g4hmQFOHmTARpZ42jY1N1tIaF5M="
+    secure: AIGEEHerHVkn7wnKUe3bBIQCLXtpvQZCMHJeXbXqvH/tktoF8Ula5ZWgGwia8hVbIx9eOXJ0s2G0QL/2NmhbtITluqLZUg/wdBtgE9EFCoAKTtSthGrMyUTr/UMT5fC4zSP3YAtLixrIMSphLHQJtelDEVyILvpkTrXi88SIei7YWSGCjokAlmxHAeqK31yhw2yilsRUysXQXbCTcyI8M3re8zzpp5jyHU7PP7GLYyyIPD4WO7SKqXAmg2blbEArv178U6n6d2mq18iJdoepXhzQ4Tc8IYXtPHCJ9yWqWyxRhcyHXWIvwmd1m3AYUb9hsamwLGQF7A4iqFogCAUx73Ks2uag6MSjnVHE1IFopwNru0E3zk+lAYnb4mE9KTIVOGKrCjlAI8odFx+DTN9oLHOE7wlba8bB3OSrcFyhQIddSVPWUsekiPJVevcGfgaSxaoJfwFtD5icB1F5vjWnM+GZeoQC59RCXJPH9AIVIGYKhuJUMSbqfURkE0AWsHAyfxGzB8iDUCr/i/f4S20UuUtR0ju/vuxRDpqOBdlpYIsfzp+ex1lRUt9yDP2sLk7y4QrT2VLCJCpb6HzQB54Els3mK/xFQUH4XouxOcERM6d2SZ+9+oZzK9l5U9cGG4QiZsOw0j2f+BBV5Yr902+WheTYVu1ak5rOgNtqjzk5qDA=
   on:
     tags: true
-
